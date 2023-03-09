@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var test = ""
-    
-    func onAppear() {
-        test = "1234"
-    }
+    @State var test: String = ""
     
     var body: some View {
         VStack {
@@ -20,6 +16,15 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+            
+            Button(action: {
+                test = "1234"
+            }) {
+                Text("Debug ME !")
+                    .padding(8)
+            }
+            .foregroundColor(Color.white)
+            .background(Color.blue)
         }
         .padding()
     }
