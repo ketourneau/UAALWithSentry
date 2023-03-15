@@ -11,7 +11,23 @@
 		9EC1BD7D29BA35670076A82F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC1BD7C29BA35670076A82F /* ContentView.swift */; };
 		9EC1BD7F29BA35680076A82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC1BD7E29BA35680076A82F /* Assets.xcassets */; };
 		9EC1BD8229BA35680076A82F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC1BD8129BA35680076A82F /* Preview Assets.xcassets */; };
+		9ED49BB629BB6C4500B397E0 /* Sentry.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED49BB429BB6C4300B397E0 /* Sentry.xcframework */; };
+		9ED49BB729BB6C4500B397E0 /* Sentry.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED49BB429BB6C4300B397E0 /* Sentry.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9EC1BD9029BA3D3F0076A82F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9ED49BB729BB6C4500B397E0 /* Sentry.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9EC1BD7729BA35670076A82F /* NativeSentry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeSentry.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +35,7 @@
 		9EC1BD7C29BA35670076A82F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9EC1BD7E29BA35680076A82F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EC1BD8129BA35680076A82F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9ED49BB429BB6C4300B397E0 /* Sentry.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Sentry.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ED49BB629BB6C4500B397E0 /* Sentry.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,6 +53,7 @@
 		9EC1BD6E29BA35670076A82F = {
 			isa = PBXGroup;
 			children = (
+				9EC1BD8B29BA3D2D0076A82F /* Frameworks */,
 				9EC1BD7929BA35670076A82F /* NativeSentry */,
 				9EC1BD7829BA35670076A82F /* Products */,
 			);
@@ -67,6 +86,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9EC1BD8B29BA3D2D0076A82F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9ED49BB429BB6C4300B397E0 /* Sentry.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,12 +104,15 @@
 				9EC1BD7329BA35670076A82F /* Sources */,
 				9EC1BD7429BA35670076A82F /* Frameworks */,
 				9EC1BD7529BA35670076A82F /* Resources */,
+				9EC1BD9029BA3D3F0076A82F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = NativeSentry;
+			packageProductDependencies = (
+			);
 			productName = NativeSentry;
 			productReference = 9EC1BD7729BA35670076A82F /* NativeSentry.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +129,7 @@
 				TargetAttributes = {
 					9EC1BD7629BA35670076A82F = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -111,6 +142,8 @@
 				Base,
 			);
 			mainGroup = 9EC1BD6E29BA35670076A82F;
+			packageReferences = (
+			);
 			productRefGroup = 9EC1BD7829BA35670076A82F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,11 +297,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NativeSentry/Preview Content\"";
-				DEVELOPMENT_TEAM = 4D8278F3Q9;
+				DEVELOPMENT_TEAM = QU35VLK5F8;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -280,9 +318,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.personal.nativeSentry.NativeSentry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blocinbloc.nativeSentry.NativeSentry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -293,11 +332,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NativeSentry/Preview Content\"";
-				DEVELOPMENT_TEAM = 4D8278F3Q9;
+				DEVELOPMENT_TEAM = QU35VLK5F8;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -309,7 +353,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.personal.nativeSentry.NativeSentry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blocinbloc.nativeSentry.NativeSentry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
